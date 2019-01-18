@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+    	<title>Synthesis</title>
+		<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/underscore-min.js"></script>
+		<script src="js/spotify-web-api.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/main_page.css">
+	</head>
+
+	<body>
+		<!-- settings modal -->
+		<div id="settings" class="modal">
+			<div class="modal_content">
+				<span id="close_modal" class="fa fa-times"></span>
+				<div class="modal_header">
+					<h2>Settings</h2>
+				</div>
+				<div class="modal_body">
+					<p>Change profile picture</p>
+				</div>
+				<button id="prof_pic_btn" class="modal_btns">Select Image</button>
+				<input id="prof_pic_input" type="file" accept="image/jpeg,image/x-png,image/gif,image/x-MS-bmp" value="Choose Image"></input><br>
+				<div class="modal_body">
+					<p>About The Creators</p>
+				</div>
+				<button id="info_btn" class="modal_btns">About</button>
+				<div id="creators" class="modal_body">
+				</div>
+			</div>
+		</div>
+		<!-- playlists modal -->
+		<div id="playlist_modal" class="pmodal">
+			<div class="modal_content">
+				<span id="close_p" class="fa fa-times"></span>
+				<div class="modal_header">
+					<h2 id="pHeader"></h2>
+				</div>
+				<div class="modal_body">
+					<span class="settings_labels">Change Playlist Name:&nbsp;</span>
+					<input id="pName" class="pInputs" type="text"></input>
+					<div>
+						<input id="pNameChg" class="modal_btns" type="button" value="Update"></input>
+						<input id="pDelete" class="modal_btns" type="button" value="Delete"></input>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- main container -->
+		<div class="container">
+
+		<div id="side_pane">
+			<p class="list_title">Library</p>
+			<ul class="main_lists">
+				<li id="tracks_tab" class="list_items" tabindex="1"><span class="fa fa-music"></span>&nbsp;&nbsp;Tracks</li>
+			</ul>
+			<p class="list_title">Playlists&nbsp;&nbsp;<span id="add_list" class="fa fa-plus"></span></p>
+			<ul id="playlists" class="main_lists">
+			</ul>
+			<p class="list_title">Sources</p>
+			<ul class="main_lists">
+				<li id="sc" class="list_items" tabindex="100"><span class="fa fa-soundcloud fa-fw"></span>&nbsp;&nbsp;Soundcloud</li>
+				<li id="sp" class="list_items" tabindex="101"><span class="fa fa-spotify fa-fw"></span>&nbsp;&nbsp;Spotify</li>
+				<li id="yt" class="list_items" tabindex="102"><span class="fa fa-youtube-play fa-fw"></span>&nbsp;&nbsp;Youtube</li>
+			</ul>
+		</div>
+		<div id="user_pane">
+			<div>
+			<img id="profile_pic" class="user_image" src="images/user_image.jpg" alt="User Profile Picture">
+			<p id="username_txt">Testing Account</p>
+			<input id="logout_btn" type="submit" value="Logout"></input>
+			<span id="user_setting" class="fa fa-cog fa-lg"></span>
+			</div>
+		</div>
+	<div id="main_pane">
+		<div id="header">
+			<span id="playlist_setting" class="fa fa-cog fa-lg"></span>
+			<p id="header_text">synthesis</p>
+			<div id="aa" class="album_art_list">
+			</div>
+		</div>
+	</div>
+	<div id="play_bar">
+		<div class="play_cont">
+			<div class="play_btns">
+			<span class="fa fa-backward fa-2x fa-fw"></span>
+			<span id="play" class="fa fa-play fa-2x fa-fw"></span>
+			<span id="pause" class="fa fa-forward fa-2x fa-fw"></span>
+			<span class="fa fa-volume-up fa-2x fa-fw"></span>
+			</div>
+			<div class="prog_bar"></div>
+			<div>
+				<img id="now_playing" class="track_art" src="images/album.jpg" alt="album art">
+				<div class="track_info">
+					<p id="track_artist"></p>
+					<p id="track_name"></p>
+				</div>
+			</div>
+		</div>
+		<div id="play_bar_img"></div>
+	</div>
+	</div>
+	<script src="js/main.js"></script>
+	</body>
+</html>
